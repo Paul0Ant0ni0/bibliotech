@@ -3,18 +3,45 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from 'src/environments/environment';
+import { MaterialModule } from './material/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './shared/material/material.module';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './views/home/home.component';
+import { LoginComponent } from './views/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NovoEmprestimoComponent } from './views/novo-emprestimo/novo-emprestimo.component';
+import { CadastroUsuarioComponent } from './views/cadastro-usuario/cadastro-usuario.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { LivrosComponent } from './views/livros/livros.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    LoginComponent,
+    CadastroUsuarioComponent,
+    NovoEmprestimoComponent,
+    DashboardComponent,
+    LivrosComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    MaterialModule,
     BrowserAnimationsModule,
-    MaterialModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

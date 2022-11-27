@@ -1,0 +1,20 @@
+<div class="loginContainer">
+    <div class="box-login">
+        <h2>LOGIN</h2>
+
+        <button (click)="signInByGoogle()"><img src="assets/logo/google-logo.svg" alt="logo">Continuar com o Google</button>
+
+        <form [formGroup]="formLogin">
+            <mat-form-field class="style-inputs" appearance="outline">
+                <mat-label>E-mail</mat-label>
+                <input matInput type="email" placeholder="Digite seu e-mail" formControlName="email">
+            </mat-form-field>
+            <mat-form-field class="style-inputs" appearance="outline">
+                <mat-label>Senha: </mat-label>
+                <input matInput type="password" placeholder="Digite a sua senha" formControlName="senha">
+            </mat-form-field>
+            <button mat-raised-button type="submit" (click)="signInEmailAndPassword()">Entrar</button>
+        </form>
+        <span>Não tem conta? <a routerLink="/cadastrar">Inscreva-se</a></span>
+    </div>
+</div>

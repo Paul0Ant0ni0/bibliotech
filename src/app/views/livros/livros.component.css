@@ -1,0 +1,80 @@
+table {
+    background-color: #F0F0F0;
+    width: 100%;
+}
+
+table th {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.container-form {
+    width: 55%;
+    margin: 15px auto;
+}
+
+.container-form form {
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.double-width {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.double-width mat-form-field {
+    width: 85%;
+}
+
+.img {
+    position: relative;
+    background-color: rgba(189, 189, 189, 0.468);
+    border-radius: 8px;
+    box-shadow: 0px 10px 55px 15px rgba(0, 0, 0, 0.1);
+}
+
+.img::after {
+    content: 'CLIQUE AQUI';
+    position: absolute;
+    top: 38%;
+    left: 25%;
+    font-size: 25px;
+    font-weight: bold;
+    filter:alpha(opacity=50);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.5);
+    opacity:.50;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.452);
+}
+
+.double-width img {
+    width: 315px;
+    height: 280px;
+    cursor: pointer;
+}
+
+.double-width img:hover {
+    filter: contrast(50);
+}
+
+.btn-add-img::-webkit-file-upload-button,
+.btn-add-img {
+    display: none;
+}
+
+.btn-submit {
+    background-color: var(--azul);
+    color: white;
+    width: 50%;
+}
+
+input[type="file"]:required:invalid{
+    border: 20px solid red;
+}
