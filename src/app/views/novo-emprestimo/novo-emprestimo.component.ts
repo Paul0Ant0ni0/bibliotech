@@ -15,7 +15,8 @@ import { NotificationService } from 'src/app/services/notification.service';
 export class NovoEmprestimoComponent implements OnInit {
 
   public formEmprestimo: FormGroup;
-  public livros: Livros[] = []
+  public livros: Livros[] = [];
+  public emprestimos: Emprestimo[] = []
 
   constructor(
     fb: FormBuilder,
@@ -35,23 +36,33 @@ export class NovoEmprestimoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.listarLivros()
+    this.listarLivros();
+    this.listarEmprestimos();
   }
 
   public novoEmprestimo(): void{
     if(this.formEmprestimo.valid){
       const emprestimo : Emprestimo = this.formEmprestimo.value;
-      emprestimo.data = new Date().toLocaleDateString();
-      this.emprestimoService.novoEmprestimo(emprestimo).subscribe(resposne => {
+      //emprestimo.data = new Date().toLocaleDateString();
+      this.emprestimoService.novoEmprestimo(emprestimo).subscribe(response => {
         this.notification.showMessege("Criado com sucesso!", "success");
         this.router.navigate(['/painel']);
       })
     }
   }
+  
 
   public listarLivros(): void {
     this.livrosService.listarLivros().subscribe(livros => {
       this.livros = livros;
     })
   }
+
+  public listarEmprestimos(): void{
+    this.emprestimoService.listarEmprestimos().subscribe(emprestimos => {
+      this.emprestimos = emprestimos
+    })
+  }
+
+ 
 }

@@ -4,6 +4,7 @@ import { Observable, from, EMPTY } from 'rxjs';
 import { Emprestimo } from '../models/emprestimo';
 import { NotificationService } from './notification.service';
 import { catchError, map } from 'rxjs/operators';
+import { LivrosService } from './livros.service';
 
 
 @Injectable({
@@ -13,7 +14,7 @@ export class EmprestimoService {
 
   constructor(
     private firestore: AngularFirestore,
-    private notification: NotificationService
+    private notification: NotificationService,
   ) { }
 
   public listarEmprestimos(): Observable<any> {
@@ -91,4 +92,6 @@ export class EmprestimoService {
       })
     );
   }
+
+
 }

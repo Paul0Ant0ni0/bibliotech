@@ -6,6 +6,8 @@ import { NovoEmprestimoComponent } from './views/novo-emprestimo/novo-emprestimo
 import { CadastroUsuarioComponent } from './views/cadastro-usuario/cadastro-usuario.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { LivrosComponent } from './views/livros/livros.component';
+import { GuardsGuard } from './guard/guards.guard';
+import { EditarEmprestimoComponent } from './views/editar-emprestimo/editar-emprestimo.component';
 
 const routes: Routes = [
   {
@@ -16,6 +18,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [ GuardsGuard ],
     title: 'Home | Bibliotech'
   }, 
   {
@@ -26,11 +29,13 @@ const routes: Routes = [
   {
     path: 'painel',
     component: DashboardComponent,
+    canActivate: [ GuardsGuard ],
     title: 'Painel de Controle | Bibliotech'
   },
   {
     path: 'livros',
     component: LivrosComponent,
+    canActivate: [ GuardsGuard ],
     title: 'Livros | Bibliotech'
   },
   {
@@ -39,10 +44,17 @@ const routes: Routes = [
     title: 'Cadastrar-se | Bibliotech'
   },
   {
-    path:'novo',
+    path:'painel/novo',
     component: NovoEmprestimoComponent,
+    canActivate: [ GuardsGuard ],
     title: 'Novo Emprestimo | Bibliotech'
   },
+  {
+    path: 'painel/editar/:id',
+    component: EditarEmprestimoComponent,
+    canActivate: [ GuardsGuard ],
+    title: 'Editar Emprestimo | Bibliotech'
+  }
   
 ];
 

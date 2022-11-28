@@ -32,7 +32,7 @@
             <mat-label>Livros</mat-label>
             <mat-select formControlName="livro">
                 <mat-option disabled>Selecione um livro</mat-option>
-                <mat-option *ngFor="let livro of livros" [value]="livro">{{livro.titulo}}</mat-option>
+                <mat-option *ngFor="let livro of livros;" [value]="livro">{{livro.titulo}}</mat-option>
             </mat-select>
         </mat-form-field>
         <button mat-raised-button type="submit" (click)="novoEmprestimo()">Emprestar</button>

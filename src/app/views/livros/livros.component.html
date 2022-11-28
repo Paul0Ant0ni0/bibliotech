@@ -27,7 +27,7 @@
             <ng-container matColumnDef="excluir">
                 <th mat-header-cell *matHeaderCellDef> Excluir </th>
                 <td mat-cell *matCellDef="let livro">
-                    <button mat-icon-button (click)="deletarLivro(livro.id)">
+                    <button mat-icon-button (click)="deletarLivro(livro.id, livro.capaUrl)">
                         <i class="material-icons">delete</i>
                     </button>
                 </td>

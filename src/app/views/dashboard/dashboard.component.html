@@ -29,7 +29,7 @@
             <ng-container matColumnDef="excluir">
                 <th mat-header-cell *matHeaderCellDef> Excluir </th>
                 <td mat-cell *matCellDef="let emprestimo">
-                    <button mat-icon-button>
+                    <button mat-icon-button (click)="deletarEmprestimo(emprestimo.id, emprestimo.livro.capaUrl)">
                         <i class="material-icons">delete</i>
                     </button>
                 </td>
@@ -38,7 +38,7 @@
             <ng-container matColumnDef="editar">
                 <th mat-header-cell *matHeaderCellDef> Editar </th>
                 <td mat-cell *matCellDef="let emprestimo">
-                    <a mat-icon-button>
+                    <a mat-icon-button [routerLink]="['/painel/editar', emprestimo.id]">
                         <i class="material-icons">edit</i>
                     </a>
                 </td>
@@ -47,9 +47,9 @@
             <ng-container matColumnDef="capa">
                 <th mat-header-cell *matHeaderCellDef> Capa </th>
                 <td mat-cell *matCellDef="let emprestimo">
-                
-                    <img src="{{emprestimo.livro.capaUrl}}" alt="capa" class="btn-capa">
-
+                    <button mat-button (click)="detalhes(emprestimo.livro, emprestimo.status)">
+                        <img src="{{emprestimo.livro.capaUrl | img }}" alt="capa" class="btn-capa">
+                    </button>
                 </td>
             </ng-container>
 
@@ -59,7 +59,7 @@
     </section>
 
     <a mat-fab class="btn-new" class="btn-add">
-        <i class="material-icons" routerLink="/novo">add</i>
+        <i class="material-icons" routerLink="/painel/novo">add</i>
     </a>
 
 </div>

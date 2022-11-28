@@ -17,6 +17,9 @@ import { CadastroUsuarioComponent } from './views/cadastro-usuario/cadastro-usua
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { LivrosComponent } from './views/livros/livros.component';
+import { AvatarPipe } from './pipes/avatar.pipe';
+import { DetaisComponent } from './components/detais/detais.component';
+import { EditarEmprestimoComponent } from './views/editar-emprestimo/editar-emprestimo.component';
 
 
 
@@ -27,9 +30,12 @@ import { LivrosComponent } from './views/livros/livros.component';
     HomeComponent,
     LoginComponent,
     CadastroUsuarioComponent,
+    EditarEmprestimoComponent,
     NovoEmprestimoComponent,
     DashboardComponent,
-    LivrosComponent
+    LivrosComponent,
+    AvatarPipe,
+    DetaisComponent
     
   ],
   imports: [
