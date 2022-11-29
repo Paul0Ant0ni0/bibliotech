@@ -10,7 +10,7 @@
 
 .box-login {
     background-color: white;
-    width: clamp(300px, 90%, 600px);
+    width: clamp(300px, 90%, 350px);
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -28,16 +28,18 @@
     border-radius: 8px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.1);
     cursor: pointer;
 }
+
 .box-login form button {
     background-color: var(--azul);
     height: 85%;
     width: 100%;
     margin-top: 25px;
 }
+
 .box-login button:active {
     transform: scale(0.9);
 }
@@ -45,6 +47,7 @@
 
 .box-login button img {
     width: 10%;
+    height: 80%;
 }
 
 .box-login form {

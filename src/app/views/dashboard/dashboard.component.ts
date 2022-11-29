@@ -38,8 +38,10 @@ export class DashboardComponent implements OnInit {
   }
 
   public deletarEmprestimo(id: string, link: string): void {
+    if(link != ""){
+      this.storage.deleteFoto(link)
+    }
     this.emprestimoService.deletarEmprestimo(id).subscribe(response => {
-      this.storage.deleteFoto(link);
       this.notification.showMessege("Apagado!", "success");
       this.iniciarTabela();
     });

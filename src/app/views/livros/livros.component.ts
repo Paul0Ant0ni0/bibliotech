@@ -48,8 +48,10 @@ export class LivrosComponent implements OnInit {
   }
 
   public deletarLivro(id: string, link: string): void {
-    this.livroService.deletarLivros(id).subscribe(response => {
+    if(link != ""){
       this.storage.deleteFoto(link)
+    }
+    this.livroService.deletarLivros(id).subscribe(response => {
       this.notification.showMessege("Apagado!", "success");
       this.iniciarTabela();
     });

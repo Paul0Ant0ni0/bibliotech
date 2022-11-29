@@ -44,7 +44,7 @@ export class CadastroUsuarioComponent implements OnInit {
          this.router.navigate(["/login"])
        })
      } else {
-       this.notification.showMessege("Dados invalido", "error");
+       this.notification.showMessege("Dados inválido", "error");
      }
    }
 }
