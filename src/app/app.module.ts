@@ -35,7 +35,7 @@ import { EditarEmprestimoComponent } from './views/editar-emprestimo/editar-empr
     DashboardComponent,
     LivrosComponent,
     AvatarPipe,
-    DetaisComponent
+    DetaisComponent,
     
   ],
   imports: [

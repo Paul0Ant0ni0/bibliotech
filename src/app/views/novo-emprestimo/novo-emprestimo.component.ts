@@ -16,7 +16,6 @@ export class NovoEmprestimoComponent implements OnInit {
 
   public formEmprestimo: FormGroup;
   public livros: Livros[] = [];
-  public emprestimos: Emprestimo[] = []
 
   constructor(
     fb: FormBuilder,
@@ -37,7 +36,7 @@ export class NovoEmprestimoComponent implements OnInit {
 
   ngOnInit(): void {
     this.listarLivros();
-    this.listarEmprestimos();
+  
   }
 
   public novoEmprestimo(): void{
@@ -58,11 +57,7 @@ export class NovoEmprestimoComponent implements OnInit {
     })
   }
 
-  public listarEmprestimos(): void{
-    this.emprestimoService.listarEmprestimos().subscribe(emprestimos => {
-      this.emprestimos = emprestimos
-    })
-  }
+
 
  
 }

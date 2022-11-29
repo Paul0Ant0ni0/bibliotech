@@ -10,8 +10,7 @@
 
 .box-login {
     background-color: white;
-    width: 25%;
-    height: 50%;
+    width: clamp(300px, 90%, 600px);
     padding: 15px;
     display: flex;
     flex-direction: column;

@@ -17,6 +17,7 @@ export class EditarEmprestimoComponent implements OnInit {
   public emprestimo!: Emprestimo;
   public livros: Livros[] = [];
 
+
   constructor(
     private emprestimoService: EmprestimoService,
     private livrosService: LivrosService,
