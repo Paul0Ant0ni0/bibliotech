@@ -7,7 +7,7 @@ export class AvatarPipe implements PipeTransform {
 
   transform(value: string | undefined): string {
     if(value == undefined || value == null || value == "") {
-      return "/assets/images/add.img.svg";
+      return "/assets/images/not-image.jpg";
     }
     return value;
   }

@@ -14,9 +14,21 @@ import { NotificationService } from 'src/app/services/notification.service';
 })
 export class EditarEmprestimoComponent implements OnInit {
 
-  public emprestimo!: Emprestimo;
+  // PARA EVITAR QUE A PROPRIEDADE VENHA UNDEFINED É NECESSÁRIO ADICIONAR UM OBJETO VAZIO, POR CAUSA DO [(ngModel)] no html
+  public emprestimo: Emprestimo = {
+      leitor: '',
+      email: '',
+      telefone: '',
+      status: '',
+      livro: {
+        titulo: '', 
+        autor: '',
+        categoria: '',
+        isbn: ''
+      },
+      data: ''
+  }
   public livros: Livros[] = [];
-
 
   constructor(
     private emprestimoService: EmprestimoService,
